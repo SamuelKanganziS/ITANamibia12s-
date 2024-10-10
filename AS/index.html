@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | ACCESSORY - HUB</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .banner {
+            position: relative;
+            width: auto; 
+            height: 400px; 
+            overflow: hidden;
+            margin: 2rem auto;
+            background-color: lightskyblue;
+            box-shadow: 0 10px 20px rgb(52, 23, 212); 
+        }
+
+        .banner-content {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .slide {
+            display: none;
+            width: 100%;
+            height: auto;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .text {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            color: white;
+            font-size: 1.2rem;
+            background-color: rgba(8, 54, 4, 0.5);
+            padding: 5px;
+            border-radius: 2px;
+        }
+        .welcome {
+            text-align: center;
+           /* padding: 2rem 0;*/
+            background-color: #67f0dd;
+            border-radius: 0rem 1.2rem 0rem 1.2rem;
+            box-shadow: 0 10px 20px rgb(52, 23, 212);
+        }
+
+        .welcome h3 {
+            font-size: 1.5rem;
+            color: black;
+            text-shadow: 3px 3px 6px rgb(253, 255, 253);
+            /*margin-bottom: 1rem;*/
+        }
+
+        .welcome p {
+            font-size: 1.3rem;
+            color:black;
+            text-shadow: 3px 3px 6px rgb(88, 90, 87);
+        }
+        .why-choose {
+           text-align: center;
+           padding: 2rem 0;
+           background-color: lightskyblue;
+         border-radius: 2rem 0 2rem 0; 
+         box-shadow: 0 10px 20px rgb(52, 23, 212); 
+        }
+.why-choose h3 {
+    font-size: 1.8rem;
+    color: black;
+    margin-bottom: 1.5rem;
+}
+
+.why-choose ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.why-choose li {
+    font-size: 1.2rem;
+    color: black;
+    margin-bottom: 1rem;
+}
+
+.why-choose li strong {
+    color: blue;
+}
+
+ 
+
+    </style>
+</head>
+<body>
+    <header>
+        <img src="image/Accessorrylogo.jpg" alt="accessory-hub logo" class="logo">
+        <h1>ACCESSORY - HUB</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="products.html">PRODUCT-CATALOGUE</a></li>
+                <li><a href="about.html">ABOUT US</a></li>
+                <li><a href="blog.html">SAVINGS</a></li>
+                <li><a href="contact.html">CONTACT US</a></li>
+                <li><a href="cart.html">SHOPPING CART</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="welcome">
+            <h3>Enhance Every Moment with AccessoryHub</h3>
+            <p>Explore our collection of cutting-edge phones and accessories, crafted to fit your unique lifestyle
+            </p>
+        </section>
+        <section class="banner">
+            <div class="banner-content">
+                <div class="slide">
+                    <img src="image/iphone14Banner.jpg" alt="Current Promotions">
+                    <div class="text">ON SALE, SHOP NOW</div>
+                </div>
+                <div class="slide">
+                    <img src="image/banner.jpeg" alt="New Arrivals">
+                    <div class="text">NEW NEW NEW, SHOP NOW</div>
+            </div>
+        </section>
+        <section class="why-choose">
+            <h3>What Makes AccessoryHub Unique?</h3>
+            <ul>
+                <li><strong>Quality Guaranteed:</strong> We offer premium products from trusted brands at affordable prices </li>
+                <li><strong>Exceptional Support:</strong> Enjoy personalized customer service for a seamless shopping experience</li>
+                <li><strong>Sustainability Focus:</strong> Join us in reducing waste with eco-friendly products and trade-in options</li>
+                <li><strong>Exclusive Deals: </strong>Access special promotions and bundles that provide unbeatable value on your favorite tech</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 AccessoryHub | <em>“Connect in Style”</em></p>
+    </footer>
+
+    <script>
+        let slideIndex = 0;
+        
+        function showSlides() {
+            let slides = document.getElementsByClassName("slide");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none"; 
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) { 
+                slideIndex = 1; 
+            }
+            slides[slideIndex - 1].style.display = "block"; 
+            setTimeout(showSlides, 3000); 
+        }
+
+        showSlides(); 
+    </script>
+</body>
+</html>

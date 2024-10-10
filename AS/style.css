@@ -1,0 +1,200 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    color: #333;
+}
+header{
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 1rem;
+background-color:lightskyblue;
+}
+header h1 {
+margin: 0;
+font-size: 2rem;
+color: black;
+text-shadow: 3px 3px 6px rgb(253, 255, 253);
+}
+
+header img.logo {
+height: 2rem;
+width: auto;
+}
+
+nav ul {
+list-style-type: none;
+padding: 0;
+display: flex;
+gap: 0.5rem;
+
+}
+
+nav a {
+text-decoration: none;
+color: #000000;
+}
+nav ul li {
+    margin: 0 1.5rem;
+}
+
+nav ul li a {
+    color: black;
+    text-decoration:none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: rgb(228, 13, 199);
+    text-decoration: underline;
+}
+main {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+section img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+}
+
+section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+section p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+article {
+    border: 1px solid white;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color:white;
+}
+
+article h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+article p {
+    font-size: 1rem;
+    margin: 0.5rem 0;
+}
+
+#about img {
+    width: 100%;
+    max-height: auto;
+    object-fit: auto;
+    margin-bottom: 1.5rem;
+}
+
+#about p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+}
+article h3 {
+    font-size: 1.6rem;
+    margin-bottom: 0.75rem;
+}
+
+article p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin: 0.5rem 0;
+    font-size: 1.1rem;
+}
+
+form input, form textarea {
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid white;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+form button {
+    background-color: #2e8b57;
+    color: white;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #3c9d68;
+}
+footer {
+    background-color:lightskyblue;
+    color: black ;
+    text-align: center;
+    padding: 1rem;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 10px 20px rgb(52, 23, 212);
+}
+
+footer p {
+    margin: 0;
+    font-size: 1rem ;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 2rem;
+    box-shadow: 0 10px 20px rgb(52, 23, 212);
+}
+table th, table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid lightskyblue;
+}
+
+table th {
+    background-color: white;
+}
+
+table td input {
+    width: 60px;
+    padding: 0.5rem;
+}
+
+.cart-total {
+    text-align: right;
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    box-shadow: 0 10px 20px rgb(52, 23, 212);
+}
+
+.cart-total button {
+    background-color:rgb(34, 230, 236);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.cart-total button:hover {
+    background-color: rgb(34, 230, 236);
+}

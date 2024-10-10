@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="short icon" type="x-icon" href="image/Accessorrylogo.jpg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Catalogue | ACCESSORY - HUB</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .search-container {
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .search-container input[type="text"] {
+            padding: 0.5rem;
+            width: 250px;
+            border: 1px solid rgb(34, 230, 236);
+            border-radius: 4px;
+        }
+
+        main {
+            padding: 2rem;
+            background-color: white;
+        }
+
+        main h2 {
+            text-align: center;
+            color: black;
+            margin-bottom: 2rem;
+        }
+
+        section {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+            padding: 1rem 0;
+        }
+
+        article {
+            background-color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 10px 20px rgb(52, 23, 212);;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+
+        article:hover {
+            transform: translateY(-5px);
+        }
+
+        article img {
+            max-width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        article h3 {
+            color: black;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        article p {
+            font-size: 1rem;
+            color: black;
+        }
+
+        article p.price {
+            color: black;
+            font-weight: bold;
+        }
+        article img {
+        width: 100%;
+        height: auto;
+        margin-bottom: 1rem;
+}
+        .product button{
+            background-color:rgb(34, 230, 236);
+            color: blue;
+            border: none;
+        }
+        h2{
+            text-shadow: 3px 3px 6px rgb(34, 230, 236);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="image/Accessorrylogo.jpg" alt="accessory-hub logo" class="logo">
+        <h1>ACCESSORY - HUB</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="products.html">PRODUCT-CATALOGUE</a></li>
+                <li><a href="about.html">ABOUT US</a></li>
+                <li><a href="blog.html">SAVINGS</a></li>
+                <li><a href="contact.html">CONTACT US</a></li>
+                <li><a href="cart.html">SHOPPING CART</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>ACCESSORY</h2>
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search for products..." onkeyup="filterProducts()">
+        </div>
+        <section id="product-list">
+            <article class="product">
+                <img src="image/iphoneXSMAX.jpeg" alt="iphoneXSMAX">
+                <h3>iphoneXSMAX</h3>
+                <p class="price">N$7000.00</p>
+                <p> Display: 6.5-inch Super Retina OLED display
+                    Chip: A12 Bionic chip for high performance
+                    Camera: Dual 12MP rear cameras with Smart HDR and 2x optical zoom</p>
+                <button onclick="addToCart('iphoneXSMAX', 7000.00)">Add to Cart</button>
+            </article>
+            <article class="product">
+                <img src="image/iphoneXR.jpeg" alt="iphoneXR">
+                <h3>iphoneXR</h3>
+                <p class="price">N$6500.00</p>
+                <p> Display: 6.1-inch Liquid Retina LCD
+                    Chip: A12 Bionic chip for fast performance
+                    Camera: 12MP single rear camera with Smart HDR</p>
+                <button onclick="addToCart('iphoneXR', 6500.00)">Add to Cart</button>
+            </article>
+            <article class="product">
+                <img src="image/iphone11.jpg" alt="iphone11.jpg">
+                <h3>iphone11 pro max</h3>
+                <p class="price">N$9 999.99 Each</p>
+                <p>Camera: Triple 12MP with Night mode
+                    Display: 6.5-inch Super Retina XDR
+                    Chip: A13 Bionic</p>
+                <button onclick="addToCart('iphone11',9999.99)">Add to Cart</button>
+            </article>
+            <article class="product">
+                <img src="image/iphone12.png" alt="iphone12">
+                <h3>iphone12 pro max</h3>
+                <p class="price">N$16 000.00</p>
+                <p>Camera: Triple 12MP with Night mode and LiDAR
+                    Display: 6.7-inch Super Retina XDR
+                    Chip: A14 Bionic</p>
+                <button onclick="addToCart('iphone12 pro max', 16000.00)">Add to Cart</button>
+            </article>
+            <article class="product">
+                <img src="image/iphone13.webp" alt="iphone13">
+                <h3>iphone13 pro max</h3>
+                <p class="price">N$18 000.00</p>
+                <p>Camera: Triple 12MP with Night mode and ProRAW
+                    Display: 6.7-inch Super Retina XDR with ProMotion
+                    Chip: A15 Bionic</p>
+                <button onclick="addToCart('iphone13 pro max', 18000.00)">Add to Cart</button>
+            </article>
+            <article class="product">
+                <img src="image/Apple-iPhone-14-Pro-Max,-5G,-128GB,-Space-Black.jpeg" alt="red-onion">
+                <h3>iPhone14 pro max</h3>
+                <p class="price">N$24 000.00 </p>
+                <p>Camera: Triple 48MP with ProRAW and Night mode
+                    Display: 6.7-inch Super Retina XDR with Always-On feature
+                    Chip: A16 Bionic</p>
+                <button onclick="addToCart('iPhone14 pro max',24000.00 )">Add to Cart</button>
+            </article>
+            <article class="product">
+                <img src="image/iphone15.3.jpg" alt="iphone15">
+                <h3>iphone15 pro max</h3>
+                <p class="price">N$30 000.00</p>
+                <p> Camera: Triple 48MP with improved low-light performance
+                    Display: 6.7-inch Super Retina XDR with Dynamic Island
+                    Chip: A17 Pro</p>
+                <button onclick="addToCart('iphone15 pro max ', 30000.00)">Add to Cart</button>
+            </article>
+            <article class="product">
+                <img src="image/iphone16.3.webp" alt="iphone16">
+                <h3>iphone16</h3>
+                <p class="price">N$32 000.00</p>
+                <p>Camera: Dual 48MP main and 12MP ultra-wide
+                    Display: 6.9-inch Super Retina XDR with Dynamic Island
+                    Chip: A18 Pro</p>
+                <button onclick="addToCart('iphone16', 32000.00 )">Add to Cart</button>
+            </article>
+            <article class="product">
+                <img src="image/samsungA12.jpg" alt="samsungA12">
+                <h3>samsungA12</h3>
+                <p class="price">N$2 500.00</p>
+                <p>Camera: Quad-camera system with 48MP main sensor
+                    Display: 6.5-inch HD+ Infinity-V display
+                    Battery: 5,000mAh for long-lasting use</p>
+                <button onclick="addToCart('samsungA12', 2500.00)">Add to Cart</button>
+            </article>
+            <article class="product">
+                <img src="image/samsungA13.jpeg" alt="samsungA13">
+                <h3>samsungA13</h3>
+                <p class="price">N$3 650.00</p>
+                <p>Camera: Quad-camera system with 50MP main sensor
+                    Display: 6.6-inch FHD+ Infinity-V display
+                    Battery: 5,000mAh for extended usage</p>
+                <button onclick="addToCart('samsungA13', 3650.00)">Add to Cart</button>
+            </article>
+            <article class="product">
+                <img src="image/SamsungGalaxyA14.webp" alt="SamsungGalaxyA14">
+                <h3>samsungA14</h3>
+                <p class="price">N$4 000.00</p>
+                <p>Camera: Triple-camera system with 50MP main sensor
+                    Display: 6.6-inch FHD+ display
+                    Battery: 5,000mAh for all-day performance</p>
+                <button onclick="addToCart('SamsungA14', 4000.00)">Add to Cart</button>
+            </article>
+            <article class="product">
+                <img src="image/samsungA23.jpeg" alt="samsungA23">
+                <h3>samsungA23</h3>
+                <p class="price">N$10 999.00</p>
+                <p>Camera: Quad-camera setup with 50MP main sensor
+                    Display: 6.6-inch FHD+ display
+                    Battery: 5,000mAh for extended battery life</p>
+                <button onclick="addToCart('samsungA23', 10999.00)">Add to Cart</button>
+            </article>
+
+            <article class="product">
+                <img src="image/MacBook.webp" alt="MacBook">
+                <h3>MacBoo</h3>
+                <p class="price">N$19 999.99</p>
+                <p>Display: Retina display for vibrant colors
+                    Chip: M1/M2 chip for high performance
+                    Battery: Up to 18 hours of battery life</p>
+                <button onclick="addToCart('MacBook', 19999.99)">Add to Cart</button>
+            </article>
+            <article class="product">
+                <img src="image/lenovo.webp" alt="lenovo">
+                <h3>lenovo</h3>
+                <p class="price">N$7 999.99</p>
+                <p>Display: FHD display for clear visuals
+                    Performance: AMD Ryzen or Intel Core processors
+                    Battery: Long-lasting battery life up to 12 hours</p>
+                <button onclick="addToCart('lenovo', 7999.99)">Add to Cart</button>
+            </article>
+            <article class="product">
+                <img src="image/dell.webp" alt="dell">
+                <h3>dell</h3>
+                <p class="price">N$8 999.00</p>
+                <p>Display: FHD and 4K display options available
+                    Performance: Intel Core and AMD Ryzen processors
+                    Design: Sleek and durable build with premium materials</p>
+                <button onclick="addToCart('dell', 8999.00)">Add to Cart</button>
+            </article>
+            <article class="product">
+                <img src="image/hpDM4S.jpg" alt="hp">
+                <h3>hp</h3>
+                <p class="price">N$8 770.99</p>
+                <p>Display: FHD and 4K display options
+                    Performance: Intel Core and AMD Ryzen processors
+                    Design: Stylish and lightweight design for portability</p>
+                <button onclick="addToCart('hp', 8770.99)">Add to Cart</button>
+            </article>
+            <article class="product">
+                <img src="image/samsungLaptop.jpeg" alt="samsungLaptop">
+                <h3>samsung</h3>
+                <p class="price">N$10 100.00</p>
+                <p>Display: AMOLED display for vibrant colors
+                    Performance: Intel Core processors for efficient multitasking
+                    Design: Slim and lightweight for portability</p>
+                <button onclick="addToCart('samsung', 10100.00 )">Add to Cart</button>
+            </article>
+            <article class="product">
+                <img src="image/accer.jpeg" alt="accer">
+                <h3>accer</h3>
+                <p class="price">N$7 550.00</p>
+                <p>Display: FHD and 4K display options available
+                    Performance: Intel Core and AMD Ryzen processors
+                    Battery: Long battery life for extended use</p>
+                <button onclick="addToCart('accer', 7550.00)">Add to Cart</button>
+            </article>
+            <article class="product">
+                <img src="image/asus.jpeg" alt="asus">
+                <h3>asus</h3>
+                <p class="price">N$7 000.00</p>
+                <p>Display: FHD and OLED display options for vibrant visuals
+                    Performance: Intel Core and AMD Ryzen processors
+                    Design: Sleek design with durable construction</p>
+                <button onclick="addToCart('asus', 7000.00)">Add to Cart</button>
+            </article>
+            <article class="product">
+                <img src="image/mecer.jpg" alt="mecer">
+                <h3>mecer</h3>
+                <p class="price">N$6 900.00</p>
+                <p>Display: FHD display for clear visuals
+                    Performance: Intel processors for reliable performance
+                    Design: Lightweight and portable for everyday use</p>
+                <button onclick="addToCart('mecer',6900.00 )">Add to Cart</button>
+            </article>
+            <article class="product">
+                <img src="image/jvc.jpeg" alt="jvc" height="200px">
+                <h3>jvc headphones</h3>
+                <p class="price">N$600.00</p>
+                <p>Sound Quality: Enhanced audio performance for rich sound
+                    Comfort: Lightweight design with cushioned ear pads
+                    Connectivity: Options for wired and wireless use</p>
+                <button onclick="addToCart('jvc headphones', 600.00)">Add to Cart</button>
+            </article>
+            <article class="product">
+                <img src="image/volcanoheadphones.jpeg" alt="volcanoheadphones">
+                <h3>volcanohead phones</h3>
+                <p class="price">N$550.00</p>
+                <p>Sound Quality: Powerful bass and clear audio
+                    Design: Ergonomic fit for comfortable wear
+                    Connectivity: Wired and wireless options available</p>
+                <button onclick="addToCart('volcano headphones', 550.00)">Add to Cart</button>
+            </article>
+            <article class="product">
+                <img src="image/jblheadset.jpeg" alt="jblheadset.jpeg">
+                <h3>jbl headphones</h3>
+                <p class="price">N$800.00</p>
+                <p>Sound Quality: Signature JBL sound with deep bass
+                    Comfort: Ergonomic design for long-lasting wear
+                    Connectivity: Bluetooth wireless for convenient listening</p>
+                <button onclick="addToCart('jbl headphones', 800.00)">Add to Cart</button>
+            </article>
+            <article class="product">
+                <img src="image/philips.jpeg" alt="philips.jpeg">
+                <h3>philips headphones</h3>
+                <p class="price">N$350.00/p>
+                <p>Sound Quality: Clear audio with balanced sound
+                    Comfort: Soft ear cushions for extended use
+                    Connectivity: Wired and wireless options available</p>
+                <button onclick="addToCart('philips headphone', 350.00)">Add to Cart</button>
+            </article>
+            <article class="product">
+                <img src="image/philipsEarpods.jpeg" alt="philipsEarpods.jpeg">
+                <h3>philips Earpods</h3>
+                <p class="price">N$400.00</p>
+                <p>Sound Quality: Clear sound with powerful bass
+                    Comfort: Lightweight design for all-day wear
+                    Connectivity: Wired or wireless options for convenience</p>
+                <button onclick="addToCart('philips Earpods', 400)">Add to Cart</button>
+            </article>
+            <article class="product">
+                <img src="image/samsungEarpods.jpg" alt="samsungEarpods.jpg">
+                <h3>samsung Earpods</h3>
+                <p class="price">N$450.00 Each</p>
+                <p>Sound Quality: Rich audio with balanced sound profile
+                    Comfort: Ergonomic design for a secure fit
+                    Connectivity: Bluetooth for easy pairing and use</p>
+                <button onclick="addToCart('samsung Earpods', 450.00)">Add to Cart</button>
+            </article>
+            <article class="product">
+                <img src="image/jblearpods.jpeg" alt="jblearpods.jpeg">
+                <h3>jbl earpods</h3>
+                <p class="price">N$800.00</p>
+                <p>Sound Quality: Signature JBL sound with deep bass
+                    Comfort: Lightweight design for a snug fit
+                    Connectivity: Wireless Bluetooth for hassle-free listening</p>
+                <button onclick="addToCart('jbl earpods', 800.00)">Add to Cart</button>
+            </article>
+            <article class="product">
+                <img src="image/sony.jpeg" alt="sony.jpeg">
+                <h3>sony earpods</h3>
+                <p class="price">N$350.00</p>
+                <p>Sound Quality: Exceptional audio with noise cancellation
+                    Comfort: Ergonomic design for a secure and comfortable fit
+                    Connectivity: Wireless Bluetooth for easy pairing</p>
+                <button onclick="addToCart('sony earpods', 350.00)">Add to Cart</button>
+            </article>
+            <article class="product">
+                <img src="image/usb-iphone.jpg" alt="usb-iphone">
+                <h3>usb-iphone cable</h3>
+                <p class="price">N$300.00</p>
+                <p>Compatibility: Works with all Lightning-compatible iPhones
+                    Charging Speed: Supports fast charging capabilities
+                    Data Transfer: High-speed data transfer for syncing files</p>
+                <button onclick="addToCart('usb-iphone', 250.00)">Add to Cart</button>
+            </article>
+            <article class="product">
+                <img src="image/usbc-type.jpeg" alt="usbc-type">
+                <h3>c-type cable</h3>
+                <p class="price">N$250.00</p>
+                <p>Compatibility: Works with USB-C devices like smartphones and laptops
+                    Charging Speed: Supports fast charging for efficient power delivery
+                    Data Transfer: High-speed data transfer for quick syncing</p>
+                <button onclick="addToCart('usbc-type',250.00)">Add to Cart</button>
+            </article>
+            <article class="product">
+                <img src="image/ctype-iphone.jpg" alt="ctype-iphone">
+                <h3>c-type-iphone cable</h3>
+                <p class="price">N$310.00 </p>
+                <p>Compatibility: Connects USB-C devices to Lightning-compatible iPhones
+                    Charging Speed: Supports fast charging capabilities
+                    Data Transfer: High-speed data transfer for syncing files</p>
+                <button onclick="addToCart('c-type-iphone', 310.00)">Add to Cart</button>
+            </article>
+            <article class="product">
+                <img src="image/iphone cable.jpeg" alt="iphone cable">
+                <h3>iphone cable</h3>
+                <p class="price">N$300.00</p>
+                <p>Compatibility: Works with all Lightning-compatible iPhones
+                    Charging Speed: Supports fast charging capabilities
+                    Data Transfer: High-speed data transfer for syncing files</p>
+                <button onclick="addToCart('iphone cable', 300.00)">Add to Cart</button>
+            </article>
+            <article class="product">
+                <img src="image/iphonecharger-adapter.jpeg" alt="iphone adapter">
+                <h3>iphone adapter</h3>
+                <p class="price">N$299.00 Each</p>
+                <p>Functionality: Converts Lightning port for audio or charging</p>
+                <button onclick="addToCart('iphone adapter', 299.00 )">Add to Cart</button>
+            </article>
+            <article class="product">
+                <img src="image/universalCableRed.jpeg" alt="universal cable">
+                <h3>universal Cable Red</h3>
+                <p class="price">N$280.00</p>
+                <p>Versatility: Compatible with multiple devices for charging and data transfer</p>
+                <button onclick="addToCart('universal Cable Red', 280.00)">Add to Cart</button>
+            </article>
+            <article class="product">
+            <img src="image/usbadapter.jpeg" alt="usbadapter">
+            <h3>usb adapter</h3>
+            <p class="price">N$250.00</p>
+            <p>Functionality: Allows connection between USB devices and various ports</p>
+            <button onclick="addToCart('usb adapter', 250.00)">Add to Cart</button>
+        </article>
+        <article class="product">
+            <img src="image/tamagochi.jpeg" alt="tamagochi cable">
+            <h3> samsung charger</h3>
+            <p class="price">N$200.00</p>
+            <p>Output: Fast charging capabilities for quick power-up</p>
+            <button onclick="addToCart('Tamagochi charger', 200.00)">Add to Cart</button>
+        </article>
+              
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 AccessoryHub | <em>“Connect in Style”</em></p>
+    </footer>
+
+    <script>
+        function addToCart(productName, productPrice) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const existingProduct = cart.find(item => item.name === productName);
+
+            if (existingProduct) {
+                existingProduct.quantity += 1;
+            } else {
+                cart.push({ name: productName, price: productPrice, quantity: 1 });
+            }
+
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert(productName + ' added to cart!');
+        }
+
+        function filterProducts() {
+            let input = document.getElementById('searchInput').value.toUpperCase();
+            let products = document.getElementsByClassName('product');
+
+            for (let i = 0; i < products.length; i++) {
+                let productName = products[i].getElementsByTagName('h3')[0];
+                if (productName.innerHTML.toUpperCase().indexOf(input) > -1) {
+                    products[i].style.display = "";
+                } else {
+                    products[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+</body>
+</html>

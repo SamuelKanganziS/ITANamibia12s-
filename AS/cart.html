@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="short icon" type="x-icon" href="image/Accessorrylogo.jpg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Shopping Cart | ACCESSORY - HUB</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <img src="image/Accessorrylogo.jpg" alt="Accessory-Hub logo" class="logo">
+        <h1>ACCESSORY - HUB</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="products.html">PRODUCT-CATALOGUE</a></li>
+                <li><a href="about.html">ABOUT US</a></li>
+                <li><a href="blog.html">SAVINGS</a></li>
+                <li><a href="contact.html">CONTACT US</a></li>
+                <li><a href="cart.html">SHOPPING CART</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>ACCESSORY - HUB CART</h2>
+            <div class="savings">
+                <label for="savedAmount">Your Saved Amount: </label>
+                <input type="number" id="savedAmount" value="0" min="0" readonly> <!-- Set to readonly -->
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                        <th>Total</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="cart-items">
+                </tbody>
+            </table>
+
+            <div class="cart-total">
+                <p><strong>Total: N$<span id="cart-total">0.00</span></strong></p>
+                <button type="button" onclick="checkout()">Proceed to Checkout</button>
+            </div>
+
+            <div id="payment-methods" style="display:none;">
+                <h3>Select Payment Method</h3>
+                <label>
+                    <input type="radio" name="payment" value="credit-card"> Credit/Debit Card
+                </label>
+                <label>
+                    <input type="radio" name="payment" value="mobile-wallet"> Mobile Wallet
+                </label>
+                <label>
+                    <input type="radio" name="payment" value="bank-transfer"> Bank Transfer
+                </label>
+            </div>
+
+            <div id="thank-you-message" style="display:none;">
+                <h3>Thank you for your purchase!</h3>
+            </div>
+            <div id="error-message" style="display:none;color:red;">
+                <h3>Sorry, you don't have enough savings to make this purchase.</h3>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 AccessoryHub | <em>“Connect in Style”</em></p>
+    </footer>
+
+    <script>
+        function loadCart() {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartItems = document.getElementById('cart-items');
+            const cartTotal = document.getElementById('cart-total');
+            cartItems.innerHTML = ''; 
+            let total = 0;
+
+            cart.forEach((item, index) => {
+                const itemTotal = item.price * item.quantity;
+                total += itemTotal;
+
+                cartItems.innerHTML += `
+                    <tr>
+                        <td>${item.name}</td>
+                        <td>${item.quantity}</td>
+                        <td>N$${item.price.toFixed(2)}</td>
+                        <td>N$${itemTotal.toFixed(2)}</td>
+                        <td><button onclick="removeItem(${index})">Remove</button></td>
+                    </tr>
+                `;
+            });
+
+            cartTotal.innerText = total.toFixed(2);
+            updateSavedAmount(); // Update the saved amount when loading the cart
+        }
+
+        function updateSavedAmount() {
+            const savedAmount = localStorage.getItem('savedAmount') || 0; // Retrieve saved amount from local storage
+            document.getElementById('savedAmount').value = parseFloat(savedAmount).toFixed(2); // Update the displayed saved amount
+        }
+
+        function removeItem(index) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.splice(index, 1);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            loadCart();
+        }
+
+        function checkout() {
+            const cartTotal = parseFloat(document.getElementById('cart-total').innerText);
+            const savedAmount = parseFloat(document.getElementById('savedAmount').value); // User's saved amount
+            const paymentMethods = document.getElementById('payment-methods');
+            const thankYouMessage = document.getElementById('thank-you-message');
+            const errorMessage = document.getElementById('error-message');
+
+            paymentMethods.style.display = 'block';
+
+            if (savedAmount >= cartTotal) {
+                // User has enough saved amount
+                alert('Proceeding to checkout...');
+                thankYouMessage.style.display = 'block';
+                errorMessage.style.display = 'none';
+            } else {
+                // User doesn't have enough saved amount
+                errorMessage.style.display = 'block';
+                thankYouMessage.style.display = 'none';
+                alert('You don\'t have enough savings. Please save more.');
+            }
+        }
+
+        window.onload = loadCart;
+    </script>
+</body>
+</html>
